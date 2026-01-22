@@ -140,6 +140,7 @@ ct28 = tk.IntVar(value=0)
 ct29 = tk.IntVar(value=0)
 ct30 = tk.IntVar(value=0)
 ct31 = tk.IntVar(value=0)
+ct32 = tk.IntVar(value=0)
 
 labelconnect = tk.Label(Page1, text="Connect Trains")
 labelconnect.pack(pady=5)
@@ -181,8 +182,11 @@ c9.pack(anchor='w')
 c10 = tk.Checkbutton(Dconnect_trains_frame, text='Class 170/2 (Double)', variable=ct10, onvalue=1, offvalue=0)
 c10.pack(anchor='w')
 
-c11 = tk.Checkbutton(Dconnect_trains_frame, text='Class 185', variable=ct11, onvalue=1, offvalue=0)
+c11 = tk.Checkbutton(Dconnect_trains_frame, text='Class 185 CN', variable=ct11, onvalue=1, offvalue=0)
 c11.pack(anchor='w')
+
+c32 = tk.Checkbutton(Dconnect_trains_frame, text='Class 185 CN (Double)', variable=ct32, onvalue=1, offvalue=0)
+c32.pack(anchor='w')
 
 c12 = tk.Checkbutton(Dconnect_trains_frame, text='Class 195', variable=ct12, onvalue=1, offvalue=0)
 c12.pack(anchor='w')
@@ -483,9 +487,82 @@ e24.pack(anchor='w')
 
 
 # Airlink Trains
+
+# --- Variables ---
+at1 = tk.IntVar(value=0)
+at2 = tk.IntVar(value=0)
+at3 = tk.IntVar(value=0)
+at4 = tk.IntVar(value=0)
+at5 = tk.IntVar(value=0)
+at6 = tk.IntVar(value=0)
+at7 = tk.IntVar(value=0)
+at8 = tk.IntVar(value=0)
+at9 = tk.IntVar(value=0)
+at10 = tk.IntVar(value=0)
+at11 = tk.IntVar(value=0)
+at12 = tk.IntVar(value=0)
+at13 = tk.IntVar(value=0)
+at14 = tk.IntVar(value=0)
+at15 = tk.IntVar(value=0)
+at16 = tk.IntVar(value=0)
+
 label = tk.Label(Page5, text="Airlink Trains")
 label.pack(pady=5)
 
+airlink_trains_frame = tk.Frame(Page5)
+airlink_trains_frame.place(x=30, y=50)
+
+a1 = tk.Checkbutton(airlink_trains_frame, text='Class 185 AL', variable=at1, onvalue=1, offvalue=0)
+a1.pack(anchor='w')
+
+a2 = tk.Checkbutton(airlink_trains_frame, text='Class 185 AL (Double)', variable=at2, onvalue=1, offvalue=0)
+a2.pack(anchor='w')
+
+a3 = tk.Checkbutton(airlink_trains_frame, text='Class 332/0', variable=at3, onvalue=1, offvalue=0)
+a3.pack(anchor='w')
+
+a4 = tk.Checkbutton(airlink_trains_frame, text='Class 332/1', variable=at4, onvalue=1, offvalue=0)
+a4.pack(anchor='w')
+
+a5 = tk.Checkbutton(airlink_trains_frame, text='Class 345', variable=at5, onvalue=1, offvalue=0)
+a5.pack(anchor='w')
+
+a6 = tk.Checkbutton(airlink_trains_frame, text='Class 360/1', variable=at6, onvalue=1, offvalue=0)
+a6.pack(anchor='w')
+
+a7 = tk.Checkbutton(airlink_trains_frame, text='Class 360/2', variable=at7, onvalue=1, offvalue=0)
+a7.pack(anchor='w')
+
+a8 = tk.Checkbutton(airlink_trains_frame, text='Class 387', variable=at8, onvalue=1, offvalue=0)
+a8.pack(anchor='w')
+
+a9 = tk.Checkbutton(airlink_trains_frame, text='Class 387 (Double)', variable=at9, onvalue=1, offvalue=0)
+a9.pack(anchor='w')
+
+
+airlink2_trains_frame = tk.Frame(Page5)
+airlink2_trains_frame.place(x=230, y=50)
+
+a10 = tk.Checkbutton(airlink2_trains_frame, text='Class 397/1', variable=at10, onvalue=1, offvalue=0)
+a10.pack(anchor='w')
+
+a11 = tk.Checkbutton(airlink2_trains_frame, text='Class 397/1 (Double)', variable=at11, onvalue=1, offvalue=0)
+a11.pack(anchor='w')
+
+a12 = tk.Checkbutton(airlink2_trains_frame, text='Class 745', variable=at12, onvalue=1, offvalue=0)
+a12.pack(anchor='w')
+
+a13 = tk.Checkbutton(airlink2_trains_frame, text='Class 755/3', variable=at13, onvalue=1, offvalue=0)
+a13.pack(anchor='w')
+
+a14 = tk.Checkbutton(airlink2_trains_frame, text='Class 745/4', variable=at14, onvalue=1, offvalue=0)
+a14.pack(anchor='w')
+
+a15 = tk.Checkbutton(airlink2_trains_frame, text='Class 802', variable=at15, onvalue=1, offvalue=0)
+a15.pack(anchor='w')
+
+a16 = tk.Checkbutton(airlink2_trains_frame, text='Class 802 (Double)', variable=at16, onvalue=1, offvalue=0)
+a16.pack(anchor='w')
       
 
 
@@ -523,8 +600,11 @@ def ListTrains():
     if ct10.get() == 1:
      trainlist.append('Class 170/2 (Double)') 
 
+    if ct32.get() == 1:
+     trainlist.append('Class 185 CN')
+
     if ct11.get() == 1:
-     trainlist.append('Class 185')
+     trainlist.append('Class 185 CN (Double)') 
 
     if ct12.get() == 1:
      trainlist.append('Class 195')
@@ -649,7 +729,131 @@ def ListTrains():
      trainlist.append('Class 373')
 
     if wt12.get() == 1:
-     trainlist.append('Class 730/0')     
+     trainlist.append('Class 730/0')
+
+
+    if et1.get() == 1:
+     trainlist.append('Class 43 HST')
+
+    if et2.get() == 1:
+     trainlist.append('Class 43 HST (5 Car)')
+
+    if et3.get() == 1:
+     trainlist.append('Class 43 HST (Buffer)')
+
+    if et4.get() == 1:
+     trainlist.append('Class 43 HST (7 Car)') 
+
+    if et5.get() == 1:
+     trainlist.append('Class 43 HST (8 Car - Buffer)')
+
+    if et6.get() == 1:
+     trainlist.append('Class 43 HST (9 Car)')
+
+    if et7.get() == 1:
+     trainlist.append('Class 91 (7 Car)')
+
+    if et8.get() == 1:
+     trainlist.append('Class 91 (9 Car)')
+
+    if et9.get() == 1:
+     trainlist.append('Class 180') 
+
+    if et10.get() == 1:
+     trainlist.append('Class 180 (Double)')
+
+    if et11.get() == 1:
+     trainlist.append('Class 220')
+
+    if et12.get() == 1:
+     trainlist.append('Class 220 (Double)')
+
+    if et13.get() == 1:
+     trainlist.append('Class 221')
+
+    if et14.get() == 1:
+     trainlist.append('Class 221 (Double)')
+
+    if et15.get() == 1:
+     trainlist.append('Class 390 (9 Car)')
+
+    if et16.get() == 1:
+     trainlist.append('Class 390 (11 Car)')
+
+    if et17.get() == 1:
+     trainlist.append('Class 397/0')
+
+    if et18.get() == 1:
+     trainlist.append('Class 397/0 (Double)')
+
+    if et19.get() == 1:
+     trainlist.append('Class 800/1')
+
+    if et20.get() == 1:
+     trainlist.append('Class 800/2')
+
+    if et21.get() == 1:
+     trainlist.append('Class 800/2 (Double)')
+
+    if et22.get() == 1:
+     trainlist.append('Class 801/1')
+
+    if et23.get() == 1:
+     trainlist.append('Class 801/2')
+
+    if et24.get() == 1:
+     trainlist.append('Class 801/1 (Double)')
+
+
+    if at1.get() == 1:
+     trainlist.append('Class 185 AL')
+
+    if at2.get() == 1:
+     trainlist.append('Class 185 AL (Double)')
+
+    if at3.get() == 1:
+     trainlist.append('Class 332/0')
+
+    if at4.get() == 1:
+     trainlist.append('Class 332/1')
+
+    if at5.get() == 1:
+     trainlist.append('Class 345')
+
+    if at6.get() == 1:
+     trainlist.append('Class 360/1')
+
+    if at7.get() == 1:
+     trainlist.append('Class 360/2')
+
+    if at8.get() == 1:
+     trainlist.append('Class 387')
+
+    if at9.get() == 1:
+     trainlist.append('Class 387 (Double)')
+
+    if at10.get() == 1:
+     trainlist.append('Class 397/1')
+
+    if at11.get() == 1:
+     trainlist.append('Class 397/1 (Double)')
+
+    if at12.get() == 1:
+     trainlist.append('Class 745')
+
+    if at13.get() == 1:
+     trainlist.append('Class 755/3')
+
+    if at14.get() == 1:
+     trainlist.append('Class 745/4')  
+
+    if at15.get() == 1:
+     trainlist.append('Class 802')
+
+    if at16.get() == 1:
+     trainlist.append('Class 802 (Double)')     
+     
+     
     
     print(trainlist)
     
